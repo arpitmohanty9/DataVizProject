@@ -64,3 +64,43 @@ layout = go.Layout(
 )
 fig = go.Figure(data =data,layout =layout)
 py.iplot(fig,filename='review_vs_wordcount')
+
+
+"""
+#distribution of ratings
+
+"""
+
+
+
+by_count = df.groupby('overall')['reviewerID'].count().reset_index()
+#df.groupby('overall')['review_words_count'].mean().reset_index()
+
+data = [go.Bar(
+            x = by_count['overall'],
+            y = by_count['reviewerID'],
+            name = 'Distribution of reviewers and ratings'
+)]
+layout = go.Layout(
+            title ='Distribution of Ratings',
+            xaxis=dict(
+                title = 'Ratings',
+                tickfont=dict(
+                    size=14,
+                    color='rgb(107, 107, 107)'
+                )
+            ),
+            yaxis=dict(
+                title='Number of reviewers',
+                titlefont=dict(
+                    size=16,
+                    color='rgb(107, 107, 107)'
+                ),
+                tickfont=dict(
+                    size=14,
+                    color='rgb(107, 107, 107)'
+                )
+            )
+)
+fig = go.Figure(data =data,layout =layout)
+py.iplot(fig,filename='reviewercount_vs_ratings')
