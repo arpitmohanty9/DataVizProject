@@ -21,9 +21,14 @@ class WordCounter:
                     self.wordDict[word] = 0
                 self.wordDict[word] += 1
 
-    def getWordDict(self, dataFrame):
+    def getWordDict(self, dataFrame, maxLength):
         self.wordDict = {}
         dataFrame.apply(self.buildDict, axis=1)
+        topWords  = sorted(self.wordDict, key=self.wordDict.get, reverse=True)[:maxLength]
+        newWordDict = {}
+        for word in topWords:
+            newWordDict[word] = self.wordDict[word]
+        self.wordDict = newWordDict
         return self.wordDict
 
 
@@ -31,6 +36,6 @@ if __name__ == "__main__":
     filePath = "../data/sample_reviews_Electronics_5.json"
     headersRequired = ['reviewerID', 'reviewerName', 'helpful', 'reviewText', 'overall', 'unixReviewTime', 'reviewTime']
     data = dataParser.parse_file_content(filePath, headersRequired)
-    wordDict = WordCounter().getWordDict(data)
+    wordDict = WordCounter().getWordDict(data,5)
     print(wordDict)
 
