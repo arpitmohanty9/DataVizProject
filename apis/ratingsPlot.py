@@ -36,5 +36,5 @@ def plotGraph(ratingsFilePath, year):
 
 if __name__ == "__main__":
     # Example to use this function
-    filePath = "./data/ratings_Electronics_short.csv"
+    filePath = "../data/ratings_Electronics_short.csv"
     plotGraph(filePath, '2013')

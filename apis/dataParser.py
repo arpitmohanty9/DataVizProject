@@ -22,7 +22,7 @@ def parse_file_content(filePath, headersRequired):
 
 if __name__ == "__main__":
     # Example to use this function
-    filePath = "./data/sample_reviews_Electronics_5.json"
+    filePath = "../data/sample_reviews_Electronics_5.json"
     headersRequired = ['reviewerID','reviewerName','helpful','reviewText','overall','unixReviewTime','reviewTime']
     data = parse_file_content(filePath, headersRequired)
     print(data.head())
