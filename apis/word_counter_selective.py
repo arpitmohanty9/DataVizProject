@@ -44,9 +44,6 @@ for word in topWords:
     newWordDict[word] = word_dict[word]
 word_dict = newWordDict
 
-# print(word_dict)
-# # wordDict = wc.WordCounter().getWordDict(data, 250)
-# # print("word count dict created")
 wordDictJson = json.dumps(word_dict)
 outPutfilePath = "../data/sample_reduced_word_count.json"
 f = open(outPutfilePath, "w")
