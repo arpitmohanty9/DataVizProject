@@ -34,8 +34,10 @@
             //         {"Name":"Roquefort","Count":1273},
             //         {"Name":"Stewed Prunes","Count":1268}]
             // };
+            //console.log(dataset);
+            //return
+            dataset = {"children":dataset};
             console.log(dataset);
-            return
 
             var diameter = 600;
             var color = d3.scaleOrdinal(d3.schemeCategory20);
@@ -115,7 +117,7 @@
                 bubble(results.data);
             }
         };
-        var data = Papa.parse('Topbrand.csv',config);
+        var data = Papa.parse('../data/Topbrand.csv',config);
         
 
 
