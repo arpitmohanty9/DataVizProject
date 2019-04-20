@@ -1,0 +1,26 @@
+
+h4 {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 22px;
+    padding: 20px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+}
+h4.retroshadow {
+    color: #2c2c2c;
+    background-color: #d5d5d5;
+    letter-spacing: .05em;
+    text-shadow: 
+    4px 4px 0px #d5d5d5, 
+    5px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+#forBubble {
+    position: relative;
+    left: 400px;
+}
+
+#forMultiChart {
+    border: solid black 5px;
+}
