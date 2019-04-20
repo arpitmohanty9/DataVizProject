@@ -24,3 +24,11 @@ h4.retroshadow {
 #forMultiChart {
     border: solid black 5px;
 }
+
+.brandsInfo {
+    float: left;
+    width: 400px;
+    border: solid black 1px;
+    height: 400px;
+    margin: 10px 0px 0px 60px;
+}
