@@ -1,6 +1,8 @@
 !function(){
     var BubbleChart = {};
 
+    var d3 = d3version4_10;
+
     function createChart(dataset) {
         console.log(dataset);
     }
