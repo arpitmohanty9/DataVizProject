@@ -7,12 +7,11 @@
   <body>
     <div id="chart"></div>
     <script>
-      $.getJSON("../data/sample_reviews_cell_phones_word_count.json", function(json) {
+      $.getJSON("../data/sample_reduced_word_count.json",function(json) {
             //word_count = json;
             console.log(json); // this will show the info it in firebug console
             drawWordCloud(json);
         });
-		
 
       function drawWordCloud(word_count){
         words = Object.keys(word_count);
