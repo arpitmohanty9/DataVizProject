@@ -9,7 +9,11 @@
 <body>
 	<script>
 
-        var bubble = function(dataset){
+        function createChart(dataset) {
+            console.log(dataset);
+        }
+
+        function createBubbleChart(dataset){
             dataset = {"children":dataset};
             console.log(dataset);
 
@@ -45,7 +49,15 @@
                 })
                 .on("click", function(d) {
                     console.log("Mouse Clicked " + d.data.Name);
-                    // showPopover.call(this, d);
+                    var config = {
+                        download: true,
+                        header: true,
+                        complete: function(results, file) {
+                            allData = results;
+                            createChart(results.data);
+                        }
+                    };
+                    var brandData = Papa.parse('../data/brands/'+d.data.Name+'.csv', config);
                 })
             ;
 
@@ -95,8 +107,7 @@
             header: true,
             complete: function(results, file) {
                 allData = results;
-                // console.log("Parsing complete:", results.data, file);
-                bubble(results.data);
+                createBubbleChart(results.data);
             }
         };
         var data = Papa.parse('../data/Topbrand.csv',config);
