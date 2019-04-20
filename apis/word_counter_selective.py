@@ -16,9 +16,7 @@ print("######## data loaded in data frame #########")
 #     tokens = nltk.word_tokenize(sentence)
 #     print(tokens)
 
-    # tokens = nltk.word_tokenize(sentence)
-    # print(tokens)
-    # print('*********')
+    # tokens = nltk.word_tokenize(sentence) print(tokens) print('*********')
 stopwords = set(stopwords.words('english'))
 
 word_list = []
@@ -37,7 +35,7 @@ for sentence in data['reviewText']:
             word_dict[word] += 1
 
 #take top 200 words and make the cloud
-maxLength = 200
+maxLength = 50
 topWords  = sorted(word_dict, key=word_dict.get, reverse=True)[:maxLength]
 newWordDict = {}
 for word in topWords:
