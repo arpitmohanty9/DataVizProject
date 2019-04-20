@@ -27,17 +27,21 @@ for file in onlyfiles:
     print("Starting ", file)
     for sentence_orig in data['reviewText']:
         temp_word_list = []
-        sentence = re.sub('[^a-zA-Z0-9\n\.\' ]', '', sentence_orig)
-        for word in sentence.split():
-            temp_word_list.append(word)
+        try:
+            sentence = re.sub('[^a-zA-Z0-9\n\.\' ]', '', sentence_orig)
+            for word in sentence.split():
+                temp_word_list.append(word)
+
             word_list = [word for word, pos in nltk.pos_tag(temp_word_list) if (
-                        pos == 'JJ' or pos == 'NN' or pos == 'NNP' or pos == 'RP')]
-        for word in word_list:
-            word = word.lower()
-            if word not in stopwords and len(word) > 1:
-                if word not in word_dict:
-                    word_dict[word] = 0
-                word_dict[word] += 1
+                            pos == 'JJ' or pos == 'NN' or pos == 'NNP' or pos == 'RP')]
+            for word in word_list:
+                word = word.lower()
+                if word not in stopwords and len(word) > 1:
+                    if word not in word_dict:
+                        word_dict[word] = 0
+                    word_dict[word] += 1
+        except Exception as ex:
+            pass
 
     print("Before top words", file)
     maxLength = 100
