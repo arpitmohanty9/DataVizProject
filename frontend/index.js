@@ -7,4 +7,5 @@ $( document ).ready(function() {
     //     WordCloud.drawWordCloud(json);
     // });
     // LineChart.createLine();
+    pieChart.makePie("",0);
 });

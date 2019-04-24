@@ -16,9 +16,9 @@ for file in onlyfiles:
     df = pd.read_csv(filepath, index_col=None)
 
     tempJSON = {}
-    tempJSON['positive'] = len(df.loc[df['sentiment'] == 1.0])
-    tempJSON['negative'] = len(df.loc[df['sentiment'] == -1.0])
-    tempJSON['neutral'] = len(df.loc[df['sentiment'] == 0.0])
+    tempJSON['Positive'] = len(df.loc[df['sentiment'] == 1.0])
+    tempJSON['Negetive'] = len(df.loc[df['sentiment'] == -1.0])
+    tempJSON['Neutral'] = len(df.loc[df['sentiment'] == 0.0])
 
     mainJSON[brand] = tempJSON
 
