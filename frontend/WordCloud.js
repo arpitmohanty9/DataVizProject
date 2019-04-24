@@ -5,6 +5,7 @@
         //var d3 = d3version4_13;
         words = Object.keys(word_count);
         var svg_location = "#forCloud";
+        d3.select(svg_location).selectAll("*").remove();
         var node  = d3.select(svg_location).node();
         var rectBoxInfo = node.getBoundingClientRect();
         var width = rectBoxInfo.width; //$(document).width();

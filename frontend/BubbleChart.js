@@ -43,15 +43,13 @@
             })
             .on("click", function(d) {
                 console.log("Mouse Clicked " + d.data.Name);
-                var config = {
-                    download: true,
-                    header: true,
-                    complete: function(results, file) {
-                        allData = results;
-                        createChart(results.data);
-                    }
-                };
-                var brandData = Papa.parse('../data/brands/'+d.data.Name+'.csv', config);
+                $.getJSON("../data/wordcloud_all.json",function(json) {
+                    //word_count = json;
+                    // console.log(json); // this will show the info it in firebug console
+                    console.log(d.data.Name); // this will show the info it in firebug console
+                    console.log(json[d.data.Name]); // this will show the info it in firebug console
+                    WordCloud.drawWordCloud(json[d.data.Name]);
+                });
             })
         ;
 

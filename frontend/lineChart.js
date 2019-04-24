@@ -5,6 +5,7 @@
         var d3 = d3version4_10;
         // 2. Use the margin convention practice 
         var svg_location = "#forLineChart";
+        d3.select(svg_location).selectAll("*").remove();
         var node  = d3.select(svg_location).node();
         var rectBoxInfo = node.getBoundingClientRect();
         var width = rectBoxInfo.width-50; //$(document).width();
