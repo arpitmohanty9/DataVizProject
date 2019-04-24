@@ -43,12 +43,19 @@
             })
             .on("click", function(d) {
                 console.log("Mouse Clicked " + d.data.Name);
+
+                // Create the word cloud using brand data
                 $.getJSON("../data/wordcloud_all.json",function(json) {
-                    //word_count = json;
-                    // console.log(json); // this will show the info it in firebug console
                     console.log(d.data.Name); // this will show the info it in firebug console
                     console.log(json[d.data.Name]); // this will show the info it in firebug console
                     WordCloud.drawWordCloud(json[d.data.Name]);
+                });
+
+                // Create the line chart using brand data
+                $.getJSON("../data/yearlyReview.json",function(json) {
+                    console.log(d.data.Name); // this will show the info it in firebug console
+                    console.log(json[d.data.Name]); // this will show the info it in firebug console
+                    LineChart.createLine(json[d.data.Name]);
                 });
             })
         ;
