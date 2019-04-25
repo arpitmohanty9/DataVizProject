@@ -33,7 +33,7 @@
 
         // 7. d3's line generator
         var line = d3.line()
-        .x(function(d, i) { return xScale(i+2005); }) // set the x values for the line generator
+        .x(function(d, i) { return xScale(i+2005)+5; }) // set the x values for the line generator
         .y(function(d) { return yScale(d.y); }) // set the y values for the line generator 
         .curve(d3.curveMonotoneX) // apply smoothing to the line
 
@@ -60,12 +60,13 @@
         // 3. Call the x axis in a group tag
         svg.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(5," + height + ")")
         .call(d3.axisBottom(xScale).tickFormat(d3.format("d"))); // Create an axis component with d3.axisBottom
 
         // 4. Call the y axis in a group tag
         svg.append("g")
         .attr("class", "y axis")
+        .attr("transform", "translate(5,0)")
         .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
         // 9. Append the path, bind the data, and call the line generator 
@@ -84,7 +85,7 @@
         .data(dataset)
         .enter().append("circle") // Uses the enter().append() method
         .attr("class", "dot") // Assign a class for styling
-        .attr("cx", function(d, i) { return xScale(i+2005) })
+        .attr("cx", function(d, i) { return xScale(i+2005)+5 })
         .attr("cy", function(d) { return yScale(d.y) })
         .attr("r", 5)
         .on("mouseover", function(d, i) {
