@@ -5,7 +5,7 @@
         console.log(sentiment_data);
         var svg_location = "#forSentiment";
         var salesData = [
-            {label: "Negetive", color: "#db4437"},
+            {label: "Negative", color: "#db4437"},
             {label: "Neutral", color: "#f4b400"},
             {label: "Positive", color: "#4285f4"}
         ];
