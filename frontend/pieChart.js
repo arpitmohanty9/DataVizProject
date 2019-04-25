@@ -5,7 +5,7 @@
         console.log(sentiment_data);
         var svg_location = "#forSentiment";
         var salesData = [
-            {label: "Negative", color: "#db4437"},
+            {label: "Negetive", color: "#db4437"},
             {label: "Neutral", color: "#f4b400"},
             {label: "Positive", color: "#4285f4"}
         ];
@@ -40,7 +40,11 @@
 
             legendG.append("text") // add the text
                 .text(function (d) {
-                    return d.label;
+                    if (d.label == "Negetive") {
+                        return "Negative"
+                    } else {
+                        return d.label;
+                    }
                 })
                 .style("font-size", 12)
                 .attr("y", 10)
