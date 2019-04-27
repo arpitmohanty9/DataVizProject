@@ -14,4 +14,5 @@ $( document ).ready(function() {
     // });
     // LineChart.createLine();
     pieChart.makePie("",0);
+    WordCloudAnimated.drawWordCloud();
 });

@@ -45,10 +45,18 @@
                 console.log("Mouse Clicked " + d.data.Name);
 
                 // Create the word cloud using brand data
+                /*
                 $.getJSON("../data/wordcloud_all_sentiment.json",function(json) {
                     console.log(d.data.Name); // this will show the info it in firebug console
                     console.log(json[d.data.Name]); // this will show the info it in firebug console
                     WordCloud.drawWordCloud(json[d.data.Name]);
+                });
+                */
+
+                $.getJSON("../data/wordcloud_all_sentiment.json",function(json) {
+                    console.log(d.data.Name); // this will show the info it in firebug console
+                    console.log(json[d.data.Name]); // this will show the info it in firebug console
+                    WordCloudAnimated.updateWordCloud(json[d.data.Name]);
                 });
 
                 // Create the line chart using brand data
