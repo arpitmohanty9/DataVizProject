@@ -1,5 +1,11 @@
 $( document ).ready(function() {
     console.log( "ready!" );
+    donutColors = {
+        "positive":"#4285f4",
+        "negative":"#db4437",
+        "neutral":"#f4b400"
+    };
+
     BubbleChart.loadChart();
     // $.getJSON("../data/sample_reduced_word_count.json",function(json) {
     //     //word_count = json;

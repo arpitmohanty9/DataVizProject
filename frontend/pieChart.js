@@ -5,9 +5,9 @@
         console.log(sentiment_data);
         var svg_location = "#forSentiment";
         var salesData = [
-            {label: "Negetive", color: "#db4437"},
-            {label: "Neutral", color: "#f4b400"},
-            {label: "Positive", color: "#4285f4"}
+            {label: "Negetive", color: donutColors.negative},
+            {label: "Neutral", color: donutColors.neutral},
+            {label: "Positive", color: donutColors.positive}
         ];
         if (index === 0) {
             var node = d3.select(svg_location).node();
