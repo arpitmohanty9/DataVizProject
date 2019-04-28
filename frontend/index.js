@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     console.log( "ready!" );
     donutColors = {
-        "positive":"#4285f4",
+        "positive":"#2aa02b",
         "negative":"#db4437",
         "neutral":"#f4b400"
     };

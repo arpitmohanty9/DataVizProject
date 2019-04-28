@@ -37,7 +37,7 @@
             cloud.enter()
                 .append("text")
                 .style("font-family", "Impact")
-                .style("fill", function(d, i) { return fill(i); })
+                .style("fill", function(d, i) { return fill(d.sent); })
                 .attr("text-anchor", "middle")
                 .attr('font-size', 1)
                 .text(function(d) { return d.text; });
@@ -93,6 +93,9 @@
                     .fontSize(function(d) { return xScale(d.size); })
                     .on("end", draw)
                     .start();
+
+                //$(selector).focus();
+                $(window).scrollTop($(selector).position().top);
             }
         }
     }
