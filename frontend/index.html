@@ -26,13 +26,30 @@
         <script src="pieChart.js"></script>
         <script src="index.js"></script>
         
-        <div id="forBubble"></div>
+        <div class="forBubble">
+                <div class="bubbleLabel">Top reviewed brands with review counts</div>
+                <div id="forBubble"></div>
+        </div>
 
-        <div id="forMultiCharts">
-            <!--div> Multiple charts will come here </div-->
-            <div id="forCloud" class="brandsInfo"> </div>
-            <div id="forLineChart" class="brandsInfo"> </div>
-            <div id="forSentiment" class="brandsInfo"> </div>
+        <div id="forMultiCharts" >
+            <div id="brandName"> Multiple charts will come here </div>
+
+            <div class="brandsInfo">
+                <div id="forCloud" class="brandsInfo"></div>
+                <div class="chartLabel">Word Cloud for a brand</div>
+            </div>
+            <div class="brandsInfo">
+                <div id="forLineChart" class="brandsInfo"></div>
+                <div class="chartLabel">Line Chart : Review Count vs Year</div>
+            </div>
+            <div class="brandsInfo">
+                <div id="forSentiment" class="brandsInfo"></div>
+                <div class="chartLabel">Donut Chart : Sentiment Distribution</div>
+            </div>
+
+
+
+
         </div>
         
 

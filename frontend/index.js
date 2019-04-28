@@ -1,4 +1,7 @@
 $( document ).ready(function() {
+    $('.chartLabel').hide();
+    $('#brandName').hide();
+
     console.log( "ready!" );
     donutColors = {
         "positive":"#2aa02b",

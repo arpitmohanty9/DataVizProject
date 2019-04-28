@@ -52,7 +52,9 @@
                     WordCloud.drawWordCloud(json[d.data.Name]);
                 });
                 */
-
+                $('.chartLabel').show();
+                $('#brandName').html("Brand name:  <u>"+d.data.Name+"</u>");
+                $('#brandName').show();
                 $.getJSON("../data/wordcloud_all_sentiment.json",function(json) {
                     console.log(d.data.Name); // this will show the info it in firebug console
                     console.log(json[d.data.Name]); // this will show the info it in firebug console

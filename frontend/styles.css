@@ -69,3 +69,25 @@ div.tooltip {
     border-radius: 8px;
     pointer-events: none;
 }
+
+.chartLabel {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.bubbleLabel {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#forMultiCharts{
+    /*display: none;*/
+}
+
+#brandName {
+text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+}
